@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: article-service
+          uri: lb://article-service
+          predicates:
+            - Path= /articles/**
+server:
+  port: 3333
+eureka:
+  client:
+    # To register to the eureka server
+    registerWithEureka: true
+
+    # To fetch the registry from the eureka server
+    fetchRegistry: true
+
+    # The location of the eureka server
+    serviceUrl:
+      defaultZone: http://localhost:2222/eureka/

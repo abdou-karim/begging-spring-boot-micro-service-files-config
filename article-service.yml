@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5434/articles-service-db
+    username: aks-user
+    password: aks-password
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 4444
+eureka:
+  client:
+    # To register to the eureka server
+    registerWithEureka: true
+
+    # To fetch the registry from the eureka server
+    fetchRegistry: true
+
+    # The location of the eureka server
+    serviceUrl:
+      defaultZone: http://localhost:2222/eureka/
+management:
+endpoints:
+  web:
+    exposure:
+      exclude: "*"
+endpoint:
+  health:
+    show-details: always
+app.db-init: true
