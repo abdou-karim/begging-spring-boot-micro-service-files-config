@@ -6,6 +6,11 @@ spring:
           uri: lb://article-service
           predicates:
             - Path= /articles/**
+        - id: sale-service
+          uri: lb://sale-service
+          predicates:
+            - Path= /sale/**
+
 server:
   port: 3333
 eureka:

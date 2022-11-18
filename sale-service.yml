@@ -1,0 +1,22 @@
+server:
+  port: 5555
+eureka:
+  client:
+    # To register to the eureka server
+    registerWithEureka: true
+
+    # To fetch the registry from the eureka server
+    fetchRegistry: true
+
+    # The location of the eureka server
+    serviceUrl:
+      defaultZone: http://localhost:2222/eureka/
+management:
+endpoints:
+  web:
+    exposure:
+      exclude: "*"
+endpoint:
+  health:
+    show-details: always
+app.db-init: true
